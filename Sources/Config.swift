@@ -5,20 +5,20 @@ import AVFoundation
 
 public struct Title {
   public static var text = NSLocalizedString("Scan barcode", comment: "")
-  public static var font = UIFont.boldSystemFontOfSize(17)
-  public static var color = UIColor.blackColor()
+  public static var font = UIFont.boldSystemFont(ofSize: 17)
+  public static var color = UIColor.black
 }
 
 public struct CloseButton {
   public static var text = NSLocalizedString("Close", comment: "")
-  public static var font = UIFont.boldSystemFontOfSize(17)
-  public static var color = UIColor.blackColor()
+  public static var font = UIFont.boldSystemFont(ofSize: 17)
+  public static var color = UIColor.black
 }
 
 public struct SettingsButton {
   public static var text = NSLocalizedString("Settings", comment: "")
-  public static var font = UIFont.boldSystemFontOfSize(17)
-  public static var color = UIColor.whiteColor()
+  public static var font = UIFont.boldSystemFont(ofSize: 17)
+  public static var color = UIColor.white
 }
 
 public struct Info {
@@ -31,14 +31,14 @@ public struct Info {
   public static var settingsText = NSLocalizedString(
     "In order to scan barcodes you have to allow camera under your settings.", comment: "")
 
-  public static var font = UIFont.boldSystemFontOfSize(14)
-  public static var textColor = UIColor.blackColor()
-  public static var tint = UIColor.blackColor()
+  public static var font = UIFont.boldSystemFont(ofSize: 14)
+  public static var textColor = UIColor.black
+  public static var tint = UIColor.black
 
-  public static var loadingFont = UIFont.boldSystemFontOfSize(16)
-  public static var loadingTint = UIColor.blackColor()
+  public static var loadingFont = UIFont.boldSystemFont(ofSize: 16)
+  public static var loadingTint = UIColor.black
 
-  public static var notFoundTint = UIColor.redColor()
+  public static var notFoundTint = UIColor.red
 }
 
 /**
@@ -47,18 +47,18 @@ public struct Info {
  - Parameter name: Image name.
  - Returns: An image.
  */
-func imageNamed(name: String) -> UIImage {
+func imageNamed(_ name: String) -> UIImage {
   let cls = BarcodeScannerController.self
-  var bundle = NSBundle(forClass: cls)
+  var bundle = Bundle(for: cls)
   let traitCollection = UITraitCollection(displayScale: 3)
 
-  if let bundlePath = bundle.resourcePath?.stringByAppendingString("/BarcodeScanner.bundle"),
-    resourceBundle = NSBundle(path: bundlePath) {
+  if let path = bundle.resourcePath,
+    let resourceBundle = Bundle(path: path + "/BarcodeScanner.bundle") {
       bundle = resourceBundle
   }
 
-  guard let image = UIImage(named: name, inBundle: bundle,
-    compatibleWithTraitCollection: traitCollection)
+  guard let image = UIImage(named: name, in: bundle,
+    compatibleWith: traitCollection)
     else { return UIImage() }
 
   return image

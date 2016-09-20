@@ -1,7 +1,7 @@
 import UIKit
 
 protocol HeaderViewDelegate: class {
-  func headerViewDidPressClose(hederView: HeaderView)
+  func headerViewDidPressClose(_ hederView: HeaderView)
 }
 
 /**
@@ -12,23 +12,23 @@ class HeaderView: UIView {
   /// Title label.
   lazy var label: UILabel = {
     let label = UILabel()
-    label.backgroundColor = .whiteColor()
+    label.backgroundColor = UIColor.white
     label.text = Title.text
     label.font = Title.font
     label.textColor = Title.color
     label.numberOfLines = 1
-    label.textAlignment = .Center
+    label.textAlignment = .center
 
     return label
   }()
 
   /// Close button.
   lazy var button: UIButton = {
-    let button = UIButton(type: .System)
-    button.setTitle(CloseButton.text, forState: .Normal)
+    let button = UIButton(type: .system)
+    button.setTitle(CloseButton.text, for: UIControlState())
     button.titleLabel?.font = CloseButton.font
     button.tintColor = CloseButton.color
-    button.addTarget(self, action: #selector(buttonDidPress), forControlEvents: .TouchUpInside)
+    button.addTarget(self, action: #selector(buttonDidPress), for: .touchUpInside)
 
     return button
   }()
@@ -46,7 +46,7 @@ class HeaderView: UIView {
   override init(frame: CGRect) {
     super.init(frame: frame)
 
-    backgroundColor = .whiteColor()
+    backgroundColor = UIColor.white
 
     [label, button].forEach {
       addSubview($0)

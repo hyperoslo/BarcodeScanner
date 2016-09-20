@@ -4,12 +4,12 @@ import BarcodeScanner
 class ViewController: UIViewController {
 
   lazy var button: UIButton = {
-    let button = UIButton(type: .System)
-    button.backgroundColor = UIColor.blackColor()
-    button.titleLabel?.font = UIFont.systemFontOfSize(28)
-    button.setTitleColor(UIColor.whiteColor(), forState: .Normal)
-    button.setTitle("Scan", forState: .Normal)
-    button.addTarget(self, action: #selector(buttonDidPress), forControlEvents: .TouchUpInside)
+    let button = UIButton(type: .system)
+    button.backgroundColor = UIColor.black
+    button.titleLabel?.font = UIFont.systemFont(ofSize: 28)
+    button.setTitleColor(UIColor.white, for: UIControlState())
+    button.setTitle("Scan", for: UIControlState())
+    button.addTarget(self, action: #selector(buttonDidPress), for: .touchUpInside)
 
     return button
   }()
@@ -17,7 +17,7 @@ class ViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    view.backgroundColor = UIColor.whiteColor()
+    view.backgroundColor = UIColor.white
     view.addSubview(button)
   }
 
@@ -34,18 +34,18 @@ class ViewController: UIViewController {
     controller.errorDelegate = self
     controller.dismissalDelegate = self
 
-    presentViewController(controller, animated: true, completion: nil)
+    present(controller, animated: true, completion: nil)
   }
 }
 
 extension ViewController: BarcodeScannerCodeDelegate {
 
-  func barcodeScanner(controller: BarcodeScannerController, didCapturedCode code: String, type: String) {
+  func barcodeScanner(_ controller: BarcodeScannerController, didCapturedCode code: String, type: String) {
     print(code)
     print(type)
 
-    let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(6 * Double(NSEC_PER_SEC)))
-    dispatch_after(delayTime, dispatch_get_main_queue()) {
+    let delayTime = DispatchTime.now() + Double(Int64(6 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
+    DispatchQueue.main.asyncAfter(deadline: delayTime) {
       controller.resetWithError()
     }
   }
@@ -53,14 +53,14 @@ extension ViewController: BarcodeScannerCodeDelegate {
 
 extension ViewController: BarcodeScannerErrorDelegate {
 
-  func barcodeScanner(controller: BarcodeScannerController, didReceiveError error: ErrorType) {
+  func barcodeScanner(_ controller: BarcodeScannerController, didReceiveError error: Error) {
     print(error)
   }
 }
 
 extension ViewController: BarcodeScannerDismissalDelegate {
 
-  func barcodeScannerDidDismiss(controller: BarcodeScannerController) {
-    controller.dismissViewControllerAnimated(true, completion: nil)
+  func barcodeScannerDidDismiss(_ controller: BarcodeScannerController) {
+    controller.dismiss(animated: true, completion: nil)
   }
 }

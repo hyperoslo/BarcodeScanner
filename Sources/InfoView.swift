@@ -15,7 +15,7 @@ class InfoView: UIVisualEffectView {
 
   /// Info image view.
   lazy var imageView: UIImageView = {
-    let image = imageNamed("info").imageWithRenderingMode(.AlwaysTemplate)
+    let image = imageNamed("info").withRenderingMode(.alwaysTemplate)
     let imageView = UIImageView(image: image)
 
     return imageView
@@ -24,7 +24,7 @@ class InfoView: UIVisualEffectView {
   /// Border view.
   lazy var borderView: UIView = {
     let view = UIView()
-    view.backgroundColor = .clearColor()
+    view.backgroundColor = UIColor.clear
     view.layer.borderWidth = 2
     view.layer.cornerRadius = 10
 
@@ -34,7 +34,7 @@ class InfoView: UIVisualEffectView {
   /**
    The current info view status mode.
    */
-  var status: Status = Status(.Scanning) {
+  var status: Status = Status(.scanning) {
     didSet {
       setupFrames()
 
@@ -45,10 +45,10 @@ class InfoView: UIVisualEffectView {
       label.font = stateStyles.font
       label.textAlignment = stateStyles.alignment
       imageView.tintColor = stateStyles.tint
-      borderView.layer.borderColor = stateStyles.tint.CGColor
+      borderView.layer.borderColor = stateStyles.tint.cgColor
 
-      if status.state != .Processing {
-        borderView.hidden = true
+      if status.state != .processing {
+        borderView.isHidden = true
         borderView.layer.removeAllAnimations()
       }
     }
@@ -60,14 +60,14 @@ class InfoView: UIVisualEffectView {
    Creates a new instance of `InfoView`.
    */
   init() {
-    let blurEffect = UIBlurEffect(style: .ExtraLight)
+    let blurEffect = UIBlurEffect(style: .extraLight)
     super.init(effect: blurEffect)
 
     [label, imageView, borderView].forEach {
       addSubview($0)
     }
 
-    status = Status(.Scanning)
+    status = Status(.scanning)
   }
 
   required init?(coder aDecoder: NSCoder) {
@@ -85,7 +85,7 @@ class InfoView: UIVisualEffectView {
     let imageSize = CGSize(width: 30, height: 27)
     let borderSize: CGFloat = 51
 
-    if status.state != .Processing && status.state != .NotFound {
+    if status.state != .processing && status.state != .notFound {
       imageView.frame = CGRect(
         x: padding,
         y: (frame.height - imageSize.height) / 2,
@@ -124,9 +124,9 @@ class InfoView: UIVisualEffectView {
    Animates blur and border view.
    */
   func animateLoading() {
-    borderView.hidden = false
+    borderView.isHidden = false
 
-    animateBlur(.Light)
+    animateBlur(.light)
     animateBorderView(CGFloat(M_PI_2))
   }
 
@@ -135,14 +135,14 @@ class InfoView: UIVisualEffectView {
 
    - Parameter style: The current blur style.
    */
-  func animateBlur(style: UIBlurEffectStyle) {
-    guard status.state == .Processing else { return }
+  func animateBlur(_ style: UIBlurEffectStyle) {
+    guard status.state == .processing else { return }
 
-    UIView.animateWithDuration(2.0, delay: 0.5, options: [.BeginFromCurrentState],
+    UIView.animate(withDuration: 2.0, delay: 0.5, options: [.beginFromCurrentState],
       animations: {
         self.effect = UIBlurEffect(style: style)
       }, completion: { _ in
-        self.animateBlur(style == .Light ? .ExtraLight : .Light)
+        self.animateBlur(style == .light ? .extraLight : .light)
     })
   }
 
@@ -151,18 +151,18 @@ class InfoView: UIVisualEffectView {
 
    - Parameter angle: Rotation angle.
    */
-  func animateBorderView(angle: CGFloat) {
-    guard status.state == .Processing else {
-      borderView.transform = CGAffineTransformIdentity
+  func animateBorderView(_ angle: CGFloat) {
+    guard status.state == .processing else {
+      borderView.transform = CGAffineTransform.identity
       return
     }
 
-    UIView.animateWithDuration(0.8,
+    UIView.animate(withDuration: 0.8,
       delay: 0.5, usingSpringWithDamping: 0.6,
       initialSpringVelocity: 1.0,
-      options: [.BeginFromCurrentState],
+      options: [.beginFromCurrentState],
       animations: {
-        self.borderView.transform = CGAffineTransformMakeRotation(angle)
+        self.borderView.transform = CGAffineTransform(rotationAngle: angle)
       }, completion: { _ in
         self.animateBorderView(angle + CGFloat(M_PI_2))
     })

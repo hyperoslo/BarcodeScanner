@@ -36,7 +36,7 @@ struct Status {
  Barcode scanner state.
  */
 enum State {
-  case Scanning, Processing, Unauthorized, NotFound
+  case scanning, processing, unauthorized, notFound
 
   typealias Styles = (tint: UIColor, font: UIFont, alignment: NSTextAlignment)
 
@@ -45,13 +45,13 @@ enum State {
     let string: String
 
     switch self {
-    case .Scanning:
+    case .scanning:
       string = Info.text
-    case .Processing:
+    case .processing:
       string = Info.loadingText
-    case .Unauthorized:
+    case .unauthorized:
       string = Info.settingsText
-    case .NotFound:
+    case .notFound:
       string = Info.notFoundText
     }
 
@@ -63,29 +63,29 @@ enum State {
     let styles: Styles
 
     switch self {
-    case .Scanning:
+    case .scanning:
       styles = (
         tint: Info.tint,
         font: Info.font,
-        alignment: .Left
+        alignment: .left
       )
-    case .Processing:
+    case .processing:
       styles = (
         tint: Info.loadingTint,
         font: Info.loadingFont,
-        alignment: .Center
+        alignment: .center
       )
-    case .Unauthorized:
+    case .unauthorized:
       styles = (
         tint: Info.tint,
         font: Info.font,
-        alignment: .Left
+        alignment: .left
       )
-    case .NotFound:
+    case .notFound:
       styles = (
         tint: Info.notFoundTint,
         font: Info.loadingFont,
-        alignment: .Center
+        alignment: .center
       )
     }
 
