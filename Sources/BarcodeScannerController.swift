@@ -322,9 +322,9 @@ open class BarcodeScannerController: UIViewController {
     if let videoPreviewLayer = videoPreviewLayer {
       videoPreviewLayer.frame = view.layer.bounds
 
-      if videoPreviewLayer.connection != nil {
-        videoPreviewLayer.connection.videoOrientation = .portrait
-      }
+        if videoPreviewLayer.connection != nil {
+            videoPreviewLayer.connection.videoOrientation = AVCaptureVideoOrientation(ui: UIApplication.shared.statusBarOrientation)
+        }
     }
 
     center(subview: focusView, inSize: CGSize(width: 218, height: 150))
@@ -348,7 +348,7 @@ open class BarcodeScannerController: UIViewController {
   // MARK: - Orientation
 
   open override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
-    return .portrait
+       return self.presentingViewController?.supportedInterfaceOrientations ?? [.landscapeLeft, .landscapeRight, .portrait, .portraitUpsideDown]
   }
 
   // MARK: - Animations
@@ -448,4 +448,27 @@ extension BarcodeScannerController: HeaderViewDelegate {
   func headerViewDidPressClose(_ headerView: HeaderView) {
     dismissalDelegate?.barcodeScannerDidDismiss(self)
   }
+}
+
+extension AVCaptureVideoOrientation {
+    var uiInterfaceOrientation: UIInterfaceOrientation {
+        get {
+            switch self {
+            case .landscapeLeft:        return .landscapeLeft
+            case .landscapeRight:       return .landscapeRight
+            case .portrait:             return .portrait
+            case .portraitUpsideDown:   return .portraitUpsideDown
+            }
+        }
+    }
+    
+    init(ui:UIInterfaceOrientation) {
+        switch ui {
+        case .landscapeRight:       self = .landscapeRight
+        case .landscapeLeft:        self = .landscapeLeft
+        case .portrait:             self = .portrait
+        case .portraitUpsideDown:   self = .portraitUpsideDown
+        default:                    self = .portrait
+        }
+    }
 }
