@@ -7,6 +7,7 @@ public struct Title {
   public static var text = localizedString("SCAN_BARCODE_TITLE")
   public static var font = UIFont.boldSystemFont(ofSize: 17)
   public static var color = UIColor.black
+  public static var headerBackgroundColor = UIColor.white
 }
 
 public struct CloseButton {
@@ -35,6 +36,7 @@ public struct Info {
   public static var loadingTint = UIColor.black
 
   public static var notFoundTint = UIColor.red
+  public static var headerBackgroundColor = UIColor.white
 }
 
 /**
