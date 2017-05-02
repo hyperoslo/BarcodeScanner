@@ -46,7 +46,7 @@ class HeaderView: UIView {
   override init(frame: CGRect) {
     super.init(frame: frame)
 
-    backgroundColor = UIColor.white
+    backgroundColor = Title.headerBackgroundColor
 
     [label, button].forEach {
       addSubview($0)

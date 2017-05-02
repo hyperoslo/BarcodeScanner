@@ -7,6 +7,7 @@ public struct Title {
   public static var text = NSLocalizedString("Scan barcode", comment: "")
   public static var font = UIFont.boldSystemFont(ofSize: 17)
   public static var color = UIColor.black
+  public static var headerBackgroundColor = UIColor.white
 }
 
 public struct CloseButton {
