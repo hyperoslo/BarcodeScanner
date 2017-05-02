@@ -40,6 +40,7 @@ public struct Info {
   public static var loadingTint = UIColor.black
 
   public static var notFoundTint = UIColor.red
+  public static var headerBackgroundColor = UIColor.white
 }
 
 /**
