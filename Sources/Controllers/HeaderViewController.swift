@@ -85,7 +85,7 @@ private extension HeaderViewController {
 
   func makeCloseButton() -> UIButton {
     let button = UIButton(type: .system)
-    button.setTitle(localizedString("BUTTON_CLOSE"), for: UIControlState())
+    button.setTitle(localizedString("BUTTON_CLOSE"), for: UIControl.State())
     button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 17)
     button.tintColor = .black
     return button
