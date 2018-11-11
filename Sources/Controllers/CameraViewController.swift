@@ -71,7 +71,11 @@ public final class CameraViewController: UIViewController {
   }
 
   private var frontCameraDevice: AVCaptureDevice? {
-    return AVCaptureDevice.default(.builtInDualCamera, for: .video, position: .front)
+    if #available(iOS 10.2, *) {
+      return AVCaptureDevice.default(.builtInDualCamera, for: .video, position: .front)
+    } else {
+      return AVCaptureDevice.devices(for: .video).first(where: { $0.position == .front })
+    }
   }
 
   private var backCameraDevice: AVCaptureDevice? {
