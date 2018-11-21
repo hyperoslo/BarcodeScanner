@@ -1,0 +1,7 @@
+"SCAN_BARCODE_TITLE" = "Scansiona il codice";
+"BUTTON_CLOSE" = "Chiudi";
+"BUTTON_SETTINGS" = "Impostazioni";
+"INFO_DESCRIPTION_TEXT" = "Inquadra il codice a barre nella finestra di scansione. La ricerca inizierà automaticamente.";
+"INFO_LOADING_TITLE" = "Ricerca del prodotto...";
+"NO_PRODUCT_ERROR_TITLE" = "Nessun prodotto trovato.";
+"ASK_FOR_PERMISSION_TEXT" = "Per poter scansionare il codice a barre è necessario abilitare i permessi della camera nelle impostazioni di sistema.";
