@@ -58,7 +58,7 @@ public final class MessageViewController: UIViewController {
 
    - Parameter style: The current blur style.
    */
-  private func animate(blurStyle: UIBlurEffectStyle) {
+    private func animate(blurStyle: UIBlurEffect.Style) {
     guard status.state == .processing else { return }
 
     UIView.animate(
