@@ -1,0 +1,7 @@
+"SCAN_BARCODE_TITLE" = "Scan code-barre";
+"BUTTON_CLOSE" = "Fermer";
+"BUTTON_SETTINGS" = "Réglages";
+"INFO_DESCRIPTION_TEXT" = "Placer le code-barre à scanner dans la fenêtre. La recherche commence automatiquement.";
+"INFO_LOADING_TITLE" = "Recherche ...";
+"NO_PRODUCT_ERROR_TITLE" = "Aucun code-barre n'a pu être reconnu.";
+"ASK_FOR_PERMISSION_TEXT" = "Pour la reconnaissance des codes-barre, vous devez autoriser l'application à utiliser la caméra.";

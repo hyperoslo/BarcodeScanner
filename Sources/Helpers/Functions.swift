@@ -22,19 +22,6 @@ func imageNamed(_ name: String) -> UIImage {
   return image
 }
 
-/**
- Returns localized string using localization resource bundle.
- - Parameter name: Image name.
- - Returns: An image.
- */
-func localizedString(_ key: String) -> String {
-  if let path = Bundle(for: BarcodeScannerViewController.self).resourcePath,
-    let resourceBundle = Bundle(path: path + "/Localization.bundle") {
-    return resourceBundle.localizedString(forKey: key, value: nil, table: "Localizable")
-  }
-  return key
-}
-
 /// Checks if the app is running in Simulator.
 var isSimulatorRunning: Bool = {
   #if swift(>=4.1)

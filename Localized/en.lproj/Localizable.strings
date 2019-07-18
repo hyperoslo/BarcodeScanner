@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+  BarcodeScanner
+
+  Created by Carlos Alcala on 7/18/19.
+  Copyright © 2019 Hyper Interaktiv AS. All rights reserved.
+*/
+
+"SCAN_BARCODE_TITLE" = "Scan barcode";
+"BUTTON_CLOSE" = "Close";
+"BUTTON_SETTINGS" = "Settings";
+"INFO_DESCRIPTION_TEXT" = "Place the barcode within the window to scan. The search will start automatically.";
+"INFO_LOADING_TITLE" = "Looking for your product...";
+"NO_PRODUCT_ERROR_TITLE" = "No product found.";
+"ASK_FOR_PERMISSION_TEXT" = "In order to scan barcodes you have to allow camera under your settings.";

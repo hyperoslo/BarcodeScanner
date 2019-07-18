@@ -1,0 +1,8 @@
+"SCAN_BARCODE_TITLE" = "バーコード読み取り";
+"BUTTON_CLOSE" = "閉じる";
+"BUTTON_SETTINGS" = "設定";
+"INFO_DESCRIPTION_TEXT" = "読み取るバーコードを枠内に入れてください。読み取りは自動で行われます。";
+"INFO_LOADING_TITLE" = "検索中...";
+"NO_PRODUCT_ERROR_TITLE" = "見つかりませんでした";
+"ASK_FOR_PERMISSION_TEXT" = "バーコードを読み取るためには設定画面からカメラへのアクセス許可が必要です。";
+

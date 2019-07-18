@@ -24,6 +24,8 @@
 		D5CB3783201944DE00B9319D /* AVMetadataObject+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CB3782201944DE00B9319D /* AVMetadataObject+Extensions.swift */; };
 		D5F1C1C91C9C5113001E17A6 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F1C1C51C9C5113001E17A6 /* Functions.swift */; };
 		D5FC8AD71D252A12004BED88 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FC8AD61D252A12004BED88 /* State.swift */; };
+		D8167B8622E1284500FE6710 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D8167B8822E1284500FE6710 /* Localizable.strings */; };
+		D8167B9022E1315D00FE6710 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8167B8F22E1315D00FE6710 /* String+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,14 @@
 		D5CB3782201944DE00B9319D /* AVMetadataObject+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVMetadataObject+Extensions.swift"; sourceTree = "<group>"; };
 		D5F1C1C51C9C5113001E17A6 /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; tabWidth = 2; };
 		D5FC8AD61D252A12004BED88 /* State.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; tabWidth = 2; };
+		D8167B8722E1284500FE6710 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D8167B8922E1286200FE6710 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D8167B8A22E12AB400FE6710 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D8167B8B22E12B0600FE6710 /* pl-PL */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pl-PL"; path = "pl-PL.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		D8167B8C22E12B2600FE6710 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D8167B8D22E12CD500FE6710 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D8167B8E22E12E1C00FE6710 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D8167B8F22E1315D00FE6710 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +98,7 @@
 				D504555E1FD8714700E46826 /* UIView+Extensions.swift */,
 				D55281BE20167DB400FF3CDD /* UIViewController+Extensions.swift */,
 				D5CB3782201944DE00B9319D /* AVMetadataObject+Extensions.swift */,
+				D8167B8F22E1315D00FE6710 /* String+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -98,6 +109,7 @@
 				D50BE3E31C9FE7A80000A34C /* Images */,
 				D5C629691C3A809D007F7B7C /* Sources */,
 				D5C6295C1C3A800E007F7B7C /* BarcodeScanner */,
+				D8167B8822E1284500FE6710 /* Localizable.strings */,
 				D5B2E8A01C3A780C00C0327D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -187,20 +199,28 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "Hyper Interaktiv AS";
 				TargetAttributes = {
 					D5B2E89E1C3A780C00C0327D = {
 						CreatedOnToolsVersion = 7.2;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
 			buildConfigurationList = D5B2E8991C3A780C00C0327D /* Build configuration list for PBXProject "BarcodeScanner" */;
 			compatibilityVersion = "Xcode 8.0";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
+				es,
+				ja,
+				"pl-PL",
+				fr,
+				tr,
+				de,
 			);
 			mainGroup = D5B2E8951C3A780C00C0327D;
 			productRefGroup = D5B2E8A01C3A780C00C0327D /* Products */;
@@ -217,6 +237,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8167B8622E1284500FE6710 /* Localizable.strings in Resources */,
 				D50BE3E91C9FE7A80000A34C /* flashOff@3x.png in Resources */,
 				D5349DF8201E42D900CD53EA /* cameraRotate@3x.png in Resources */,
 				D50BE3EB1C9FE7A80000A34C /* info@3x.png in Resources */,
@@ -239,7 +260,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -256,6 +277,7 @@
 				D55281B8201675D500FF3CDD /* MessageViewController.swift in Sources */,
 				D55281BC2016782C00FF3CDD /* BarcodeScannerViewController.swift in Sources */,
 				D5CB3783201944DE00B9319D /* AVMetadataObject+Extensions.swift in Sources */,
+				D8167B9022E1315D00FE6710 /* String+Extensions.swift in Sources */,
 				D5CB377F2017ED2E00B9319D /* VideoPermissionService.swift in Sources */,
 				2DBF9E0E1F169DEF006B5AA8 /* FocusViewType.swift in Sources */,
 				D504555F1FD8714700E46826 /* UIView+Extensions.swift in Sources */,
@@ -266,11 +288,30 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXVariantGroup section */
+		D8167B8822E1284500FE6710 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D8167B8722E1284500FE6710 /* en */,
+				D8167B8922E1286200FE6710 /* es */,
+				D8167B8A22E12AB400FE6710 /* ja */,
+				D8167B8B22E12B0600FE6710 /* pl-PL */,
+				D8167B8C22E12B2600FE6710 /* fr */,
+				D8167B8D22E12CD500FE6710 /* tr */,
+				D8167B8E22E12E1C00FE6710 /* de */,
+			);
+			name = Localizable.strings;
+			path = Localized;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		D5B2E8B11C3A780C00C0327D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -279,12 +320,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -327,6 +370,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -335,12 +379,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -386,11 +432,11 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "no.hyper.BarcodeScanner-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "kurrentap.BarcodeScanner-iOS";
 				PRODUCT_NAME = BarcodeScanner;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -407,10 +453,10 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "no.hyper.BarcodeScanner-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "kurrentap.BarcodeScanner-iOS";
 				PRODUCT_NAME = BarcodeScanner;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};

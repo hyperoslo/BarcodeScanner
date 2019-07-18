@@ -1,0 +1,7 @@
+"SCAN_BARCODE_TITLE" = "Barkod Tara";
+"BUTTON_CLOSE" = "Kapat";
+"BUTTON_SETTINGS" = "Ayarlar";
+"INFO_DESCRIPTION_TEXT" = "Barkodu pencereye yerleştirin. Arama otomatik başlayacaktır.";
+"INFO_LOADING_TITLE" = "Ürün aranıyor...";
+"NO_PRODUCT_ERROR_TITLE" = "Ürün bulunamadı.";
+"ASK_FOR_PERMISSION_TEXT" = "Barkod tarayıcıyı kullanabilmek için ayarlardan kameraya izin vermeniz gerekmektedir.";

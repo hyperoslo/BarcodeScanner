@@ -1,0 +1,7 @@
+"SCAN_BARCODE_TITLE" = "Scan Barcode";
+"BUTTON_CLOSE" = "Schließen";
+"BUTTON_SETTINGS" = "Einstellungen";
+"INFO_DESCRIPTION_TEXT" = "Den Barcode innerhalb des Fensters platzieren. Die Suche beginnt automatisch.";
+"INFO_LOADING_TITLE" = "Suche...";
+"NO_PRODUCT_ERROR_TITLE" = "Es wurde kein Barcode erkannt.";
+"ASK_FOR_PERMISSION_TEXT" = "Für die Erkennung der Barcodes, müssen Sie der Nutzung für die Kamera zustimmen.";

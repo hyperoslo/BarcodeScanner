@@ -1,0 +1,8 @@
+"SCAN_BARCODE_TITLE" = "Escanear Codigo";
+"BUTTON_CLOSE" = "Cerrar";
+"BUTTON_SETTINGS" = "Configuracion";
+"INFO_DESCRIPTION_TEXT" = "Ajustar el recuadro en el codigo para escanear. La busqueda empezara automaticamente.";
+"INFO_LOADING_TITLE" = "Buscando el codigo del producto...";
+"NO_PRODUCT_ERROR_TITLE" = "No se encontro el producto.";
+"ASK_FOR_PERMISSION_TEXT" = "En orden de escanear codigos se debe permitir usar la camara en configuracion del equipo.";
+
