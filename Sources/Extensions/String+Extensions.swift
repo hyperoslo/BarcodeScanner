@@ -15,7 +15,19 @@ extension String {
      - Returns: localized text.
      */
 
+    var localizedString: String {
+        if let path = Bundle(for: BarcodeScannerViewController.self).resourcePath,
+            let bundle = Bundle(path: path + "/Localized.bundle") {
+            return NSLocalizedString(self, tableName: "", bundle: bundle, value: "", comment: "")
+        }
+        return self
+    }
+
     var localized: String {
-        return NSLocalizedString(self, tableName: nil, bundle: Bundle.main, value: "", comment: "")
+        if let path = Bundle(for: BarcodeScannerViewController.self).resourcePath,
+            let resourceBundle = Bundle(path: path + "/Localized.bundle") {
+            return resourceBundle.localizedString(forKey: self, value: nil, table: "Localizable")
+        }
+        return self
     }
 }

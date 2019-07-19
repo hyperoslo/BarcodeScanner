@@ -1,7 +1,0 @@
-"SCAN_BARCODE_TITLE" = "Zeskanuj kod kreskowy";
-"BUTTON_CLOSE" = "Zamknij";
-"BUTTON_SETTINGS" = "Ustawienia";
-"INFO_DESCRIPTION_TEXT" = "Aby zeskanować kod, umieść go wewnątrz prostokątu. Skanowanie rozpocznie się automatycznie.";
-"INFO_LOADING_TITLE" = "Szukanie produktu...";
-"NO_PRODUCT_ERROR_TITLE" = "Nie znaleziono produktu.";
-"ASK_FOR_PERMISSION_TEXT" = "Jeśli chcesz zeskanować kod, musisz udzielić dostęp na używanie aparatu w ustawieniach telefonu.";

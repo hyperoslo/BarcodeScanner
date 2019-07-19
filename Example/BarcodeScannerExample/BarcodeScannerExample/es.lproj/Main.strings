@@ -1,0 +1,12 @@
+
+/* Class = "UIButton"; normalTitle = "Scan (Push Navigation)"; ObjectID = "1IP-XH-yBM"; */
+"1IP-XH-yBM.normalTitle" = "Scan (Push Navigation)";
+
+/* Class = "UINavigationItem"; title = "Barcode Scanner"; ObjectID = "UUc-vE-aWV"; */
+"UUc-vE-aWV.title" = "Barcode Scanner";
+
+/* Class = "UIButton"; normalTitle = "Scan (Present Navigation)"; ObjectID = "Y1d-UF-yFD"; */
+"Y1d-UF-yFD.normalTitle" = "Scan (Present Navigation)";
+
+/* Class = "UIViewController"; title = "Barcode Scanner"; ObjectID = "l7u-ZM-WHJ"; */
+"l7u-ZM-WHJ.title" = "Barcode Scanner";
