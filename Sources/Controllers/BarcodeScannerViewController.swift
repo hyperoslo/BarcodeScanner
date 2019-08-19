@@ -56,6 +56,8 @@ open class BarcodeScannerViewController: UIViewController {
 
   // MARK: - Private properties
 
+  /// Flag to disable concurrent instances of flash animation
+  private var animatingFlash = false
   /// Flag to lock session from capturing.
   private var locked = false
   /// Flag to check if layout constraints has been activated.
@@ -197,6 +199,11 @@ open class BarcodeScannerViewController: UIViewController {
    - Parameter processing: Flag to set the current state to `.processing`.
    */
   private func animateFlash(whenProcessing: Bool = false) {
+    if (animatingFlash) {
+        return
+    }
+    animatingFlash = true
+    
     let flashView = UIView(frame: view.bounds)
     flashView.backgroundColor = UIColor.white
     flashView.alpha = 1
@@ -210,6 +217,7 @@ open class BarcodeScannerViewController: UIViewController {
         flashView.alpha = 0.0
       }),
       completion: ({ [weak self] _ in
+        self?.animatingFlash = false
         flashView.removeFromSuperview()
 
         if whenProcessing {
