@@ -1,4 +1,6 @@
-use_frameworks!
 platform :ios, '9.0'
-pod 'BarcodeScanner', path: '../../'
-target 'BarcodeScannerExample'
+use_frameworks!
+
+target 'BarcodeScannerExample' do
+  pod 'BarcodeScanner', :path => '../../'
+end

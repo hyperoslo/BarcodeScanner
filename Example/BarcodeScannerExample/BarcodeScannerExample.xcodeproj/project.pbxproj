@@ -101,9 +101,7 @@
 				D50BE3F21C9FE8870000A34C /* Frameworks */,
 				D50BE3F31C9FE8870000A34C /* Resources */,
 				E090C912AA824DD28A310598 /* [CP] Embed Pods Frameworks */,
-				B23721B8976E46E75F5C472C /* [CP] Copy Pods Resources */,
 				C6637BE832A43C8F49FCF84D /* 📦 Embed Pods Frameworks */,
-				A8D9BF9C6304351F12DE8E23 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -126,9 +124,9 @@
 				TargetAttributes = {
 					D50BE3F41C9FE8870000A34C = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = XVAH95CHDC;
+						DevelopmentTeam = P2G5E4288Z;
 						LastSwiftMigration = 0800;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -137,6 +135,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -179,36 +178,6 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		A8D9BF9C6304351F12DE8E23 /* 📦 Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BarcodeScannerExample/Pods-BarcodeScannerExample-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B23721B8976E46E75F5C472C /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BarcodeScannerExample/Pods-BarcodeScannerExample-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		BDF82C3FF3E7C5A57E2534BE /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -248,7 +217,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-BarcodeScannerExample/Pods-BarcodeScannerExample-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-BarcodeScannerExample/Pods-BarcodeScannerExample-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/BarcodeScanner/BarcodeScanner.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -257,7 +226,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BarcodeScannerExample/Pods-BarcodeScannerExample-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BarcodeScannerExample/Pods-BarcodeScannerExample-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -402,17 +371,17 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = XVAH95CHDC;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P2G5E4288Z;
 				INFOPLIST_FILE = BarcodeScannerExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = no.hyper.BarcodeScannerExample2;
+				PRODUCT_BUNDLE_IDENTIFIER = net.kriter.BarcodeScanner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "5429b4c3-def8-4c81-a541-9333e6f69af9";
-				PROVISIONING_PROFILE_SPECIFIER = "Wildcard Development";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -424,14 +393,14 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P2G5E4288Z;
 				INFOPLIST_FILE = BarcodeScannerExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = no.hyper.BarcodeScannerExample2;
+				PRODUCT_BUNDLE_IDENTIFIER = net.kriter.BarcodeScanner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
