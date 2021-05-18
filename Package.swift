@@ -22,7 +22,7 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages which this package depends on.
         .target(
             name: "BarcodeScanner",
-            path: "Sources",
-            resources: [.copy("Images/cameraRotate@3x.png")]),
+            path: "BarcodeScanner/Sources",
+            resources: [.copy("BarcodeScanner/Sources/Images/cameraRotate@3x.png")]),
     ]
 )
