@@ -32,7 +32,7 @@ public protocol BarcodeScannerDismissalDelegate: class {
  - Not found error message
  */
 open class BarcodeScannerViewController: UIViewController {
-  private static let footerHeight: CGFloat = 75
+  var footerHeight: CGFloat = 75
   public var hideFooterView = false
 
   // MARK: - Public properties
