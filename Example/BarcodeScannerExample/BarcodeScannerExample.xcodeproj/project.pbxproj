@@ -102,7 +102,6 @@
 				D50BE3F31C9FE8870000A34C /* Resources */,
 				E090C912AA824DD28A310598 /* [CP] Embed Pods Frameworks */,
 				C6637BE832A43C8F49FCF84D /* 📦 Embed Pods Frameworks */,
-				A8D9BF9C6304351F12DE8E23 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -126,17 +125,16 @@
 					D50BE3F41C9FE8870000A34C = {
 						CreatedOnToolsVersion = 7.2.1;
 						DevelopmentTeam = XVAH95CHDC;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 1310;
 						ProvisioningStyle = Manual;
 					};
 				};
 			};
 			buildConfigurationList = D50BE3F01C9FE8870000A34C /* Build configuration list for PBXProject "BarcodeScannerExample" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
 				Base,
 			);
@@ -177,21 +175,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		A8D9BF9C6304351F12DE8E23 /* 📦 Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BarcodeScannerExample/Pods-BarcodeScannerExample-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		BDF82C3FF3E7C5A57E2534BE /* [CP] Check Pods Manifest.lock */ = {
@@ -406,7 +389,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "5429b4c3-def8-4c81-a541-9333e6f69af9";
 				PROVISIONING_PROFILE_SPECIFIER = "Wildcard Development";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -428,7 +411,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
