@@ -2,18 +2,18 @@ import UIKit
 import AVFoundation
 
 /// Delegate to handle camera setup and video capturing.
-protocol CameraViewControllerDelegate: class {
+@objc
+protocol CameraViewControllerDelegate: AnyObject {
   func cameraViewControllerDidSetupCaptureSession(_ controller: CameraViewController)
   func cameraViewControllerDidFailToSetupCaptureSession(_ controller: CameraViewController)
   func cameraViewController(_ controller: CameraViewController, didReceiveError error: Error)
   func cameraViewControllerDidTapSettingsButton(_ controller: CameraViewController)
-  func cameraViewController(
-    _ controller: CameraViewController,
-    didOutput metadataObjects: [AVMetadataObject]
+  func cameraViewController(_ controller: CameraViewController, didOutput metadataObjects: [AVMetadataObject]
   )
 }
 
 /// View controller responsible for camera controls and video capturing.
+@objcMembers
 public final class CameraViewController: UIViewController {
   weak var delegate: CameraViewControllerDelegate?
 

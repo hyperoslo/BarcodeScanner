@@ -11,7 +11,7 @@ enum State {
 }
 
 /// State message provider.
-public struct StateMessageProvider {
+public class StateMessageProvider: NSObject {
   public var scanningText = localizedString("INFO_DESCRIPTION_TEXT")
   public var processingText = localizedString("INFO_LOADING_TITLE")
   public var unathorizedText = localizedString("ASK_FOR_PERMISSION_TEXT")

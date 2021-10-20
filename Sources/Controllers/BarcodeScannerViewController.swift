@@ -4,7 +4,8 @@ import AVFoundation
 // MARK: - Delegates
 
 /// Delegate to handle the captured code.
-public protocol BarcodeScannerCodeDelegate: class {
+@objc
+public protocol BarcodeScannerCodeDelegate: AnyObject {
   func scanner(
     _ controller: BarcodeScannerViewController,
     didCaptureCode code: String,
@@ -13,12 +14,14 @@ public protocol BarcodeScannerCodeDelegate: class {
 }
 
 /// Delegate to report errors.
-public protocol BarcodeScannerErrorDelegate: class {
+@objc
+public protocol BarcodeScannerErrorDelegate: AnyObject {
   func scanner(_ controller: BarcodeScannerViewController, didReceiveError error: Error)
 }
 
 /// Delegate to dismiss barcode scanner when the close button has been pressed.
-public protocol BarcodeScannerDismissalDelegate: class {
+@objc
+public protocol BarcodeScannerDismissalDelegate: AnyObject {
   func scannerDidDismiss(_ controller: BarcodeScannerViewController)
 }
 
@@ -31,6 +34,7 @@ public protocol BarcodeScannerDismissalDelegate: class {
  - Unauthorized mode
  - Not found error message
  */
+@objcMembers
 open class BarcodeScannerViewController: UIViewController {
   private static let footerHeight: CGFloat = 75
 
