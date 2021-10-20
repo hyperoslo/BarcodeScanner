@@ -377,7 +377,7 @@ private extension CameraViewController {
     videoPreviewLayer.frame = view.layer.bounds
 
     if let connection = videoPreviewLayer.connection, connection.isVideoOrientationSupported {
-      switch UIApplication.shared.statusBarOrientation {
+      switch UIApplication.interfaceOrientation {
       case .portrait:
         connection.videoOrientation = .portrait
       case .landscapeRight:
@@ -436,4 +436,17 @@ extension CameraViewController: AVCaptureMetadataOutputObjectsDelegate {
                              from connection: AVCaptureConnection) {
     delegate?.cameraViewController(self, didOutput: metadataObjects)
   }
+}
+
+// MARK: - Private
+
+private extension UIApplication {
+
+    static var interfaceOrientation: UIInterfaceOrientation? {
+        if #available(iOS 13.0, *) {
+            return UIApplication.shared.windows.first(where: { $0.isKeyWindow })?.windowScene?.interfaceOrientation
+        } else {
+            return UIApplication.shared.statusBarOrientation
+        }
+    }
 }
