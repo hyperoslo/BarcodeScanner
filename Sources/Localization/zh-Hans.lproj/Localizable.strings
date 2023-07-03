@@ -1,0 +1,7 @@
+"SCAN_BARCODE_TITLE" = "扫描二维码";
+"BUTTON_CLOSE" = "关闭";
+"BUTTON_SETTINGS" = "设置";
+"INFO_DESCRIPTION_TEXT" = "把条形码放在窗口来扫描。搜索会自动开始。";
+"INFO_LOADING_TITLE" = "寻找产品中...";
+"NO_PRODUCT_ERROR_TITLE" = "没有找到产品。";
+"ASK_FOR_PERMISSION_TEXT" = "你需要允许在设置里，允许访问相机才能扫描条形码。";
