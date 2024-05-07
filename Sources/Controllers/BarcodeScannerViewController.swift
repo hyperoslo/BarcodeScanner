@@ -4,7 +4,7 @@ import AVFoundation
 // MARK: - Delegates
 
 /// Delegate to handle the captured code.
-public protocol BarcodeScannerCodeDelegate: class {
+@objc public protocol BarcodeScannerCodeDelegate: AnyObject {
   func scanner(
     _ controller: BarcodeScannerViewController,
     didCaptureCode code: String,
@@ -13,12 +13,12 @@ public protocol BarcodeScannerCodeDelegate: class {
 }
 
 /// Delegate to report errors.
-public protocol BarcodeScannerErrorDelegate: class {
+@objc public protocol BarcodeScannerErrorDelegate: AnyObject {
   func scanner(_ controller: BarcodeScannerViewController, didReceiveError error: Error)
 }
 
 /// Delegate to dismiss barcode scanner when the close button has been pressed.
-public protocol BarcodeScannerDismissalDelegate: class {
+@objc public protocol BarcodeScannerDismissalDelegate: AnyObject {
   func scannerDidDismiss(_ controller: BarcodeScannerViewController)
 }
 
@@ -33,27 +33,27 @@ public protocol BarcodeScannerDismissalDelegate: class {
  */
 open class BarcodeScannerViewController: UIViewController {
   public static var footerHeight: CGFloat = 75
-  public var hideFooterView = false
+  @objc public var hideFooterView = false
 
   // MARK: - Public properties
 
   /// Delegate to handle the captured code.
-  public weak var codeDelegate: BarcodeScannerCodeDelegate?
+  @objc public weak var codeDelegate: BarcodeScannerCodeDelegate?
   /// Delegate to report errors.
-  public weak var errorDelegate: BarcodeScannerErrorDelegate?
+  @objc public weak var errorDelegate: BarcodeScannerErrorDelegate?
   /// Delegate to dismiss barcode scanner when the close button has been pressed.
-  public weak var dismissalDelegate: BarcodeScannerDismissalDelegate?
+  @objc public weak var dismissalDelegate: BarcodeScannerDismissalDelegate?
 
   /// When the flag is set to `true` controller returns a captured code
   /// and waits for the next reset action.
-  public var isOneTimeSearch = true
+  @objc public var isOneTimeSearch = true
 
     /// When the flag is set to `true` the screen is flashed on barcode scan.
       /// Defaults to true.
-  public var shouldSimulateFlash = true
+  @objc public var shouldSimulateFlash = true
     
   /// `AVCaptureMetadataOutput` metadata object types.
-  public var metadata = AVMetadataObject.ObjectType.barcodeScannerMetadata {
+  @objc public var metadata = AVMetadataObject.ObjectType.barcodeScannerMetadata {
     didSet {
       cameraViewController.metadata = metadata
     }

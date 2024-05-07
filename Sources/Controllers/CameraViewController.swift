@@ -2,7 +2,7 @@ import UIKit
 import AVFoundation
 
 /// Delegate to handle camera setup and video capturing.
-protocol CameraViewControllerDelegate: class {
+protocol CameraViewControllerDelegate: AnyObject {
   func cameraViewControllerDidSetupCaptureSession(_ controller: CameraViewController)
   func cameraViewControllerDidFailToSetupCaptureSession(_ controller: CameraViewController)
   func cameraViewController(_ controller: CameraViewController, didReceiveError error: Error)
@@ -134,7 +134,9 @@ public final class CameraViewController: UIViewController {
     }
 
     torchMode = .off
-    captureSession.startRunning()
+    DispatchQueue.global(qos: .background).async {
+      self.captureSession.startRunning()
+    }
     focusView.isHidden = false
     flashButton.isHidden = captureDevice?.position == .front
     cameraButton.isHidden = !showsCameraButton
