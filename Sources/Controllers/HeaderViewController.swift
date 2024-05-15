@@ -1,8 +1,7 @@
 import UIKit
 
 /// Delegate to handle touch event of the close button.
-@objc
-protocol HeaderViewControllerDelegate: AnyObject {
+@objc protocol HeaderViewControllerDelegate: AnyObject {
   func headerViewControllerDidTapCloseButton(_ controller: HeaderViewController)
 }
 

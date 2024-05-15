@@ -2,8 +2,7 @@ import UIKit
 import AVFoundation
 
 /// Delegate to handle camera setup and video capturing.
-@objc
-protocol CameraViewControllerDelegate: AnyObject {
+@objc protocol CameraViewControllerDelegate: AnyObject {
   func cameraViewControllerDidSetupCaptureSession(_ controller: CameraViewController)
   func cameraViewControllerDidFailToSetupCaptureSession(_ controller: CameraViewController)
   func cameraViewController(_ controller: CameraViewController, didReceiveError error: Error)
@@ -19,6 +18,7 @@ public final class CameraViewController: UIViewController {
 
   /// Focus view type.
   public var barCodeFocusViewType: FocusViewType = .animated
+  public var initialCameraPosition: AVCaptureDevice.Position = .back
   public var showsCameraButton: Bool = false {
     didSet {
       cameraButton.isHidden = showsCameraButton
@@ -133,7 +133,9 @@ public final class CameraViewController: UIViewController {
     }
 
     torchMode = .off
-    captureSession.startRunning()
+    DispatchQueue.global(qos: .background).async {
+      self.captureSession.startRunning()
+    }
     focusView.isHidden = false
     flashButton.isHidden = captureDevice?.position == .front
     cameraButton.isHidden = !showsCameraButton
@@ -213,7 +215,7 @@ public final class CameraViewController: UIViewController {
       }
 
       if error == nil {
-        strongSelf.setupSessionInput(for: .back)
+        strongSelf.setupSessionInput(for: strongSelf.initialCameraPosition)
         strongSelf.setupSessionOutput()
         strongSelf.delegate?.cameraViewControllerDidSetupCaptureSession(strongSelf)
       } else {

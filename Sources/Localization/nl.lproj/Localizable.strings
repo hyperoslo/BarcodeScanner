@@ -1,0 +1,7 @@
+"SCAN_BARCODE_TITLE" = "Scan barcode";
+"BUTTON_CLOSE" = "Sluit";
+"BUTTON_SETTINGS" = "Instellingen";
+"INFO_DESCRIPTION_TEXT" = "Plaats de barcode in het venster om te scannen. Zoeken start automatisch.";
+"INFO_LOADING_TITLE" = "Product aan het zoeken...";
+"NO_PRODUCT_ERROR_TITLE" = "Geen product gevonden.";
+"ASK_FOR_PERMISSION_TEXT" = "Om een barcode te kunnen scannen hebben we toegang nodig tot de camera.";

@@ -185,6 +185,8 @@ let viewController = BarcodeScannerViewController()
 viewController.cameraViewController.barCodeFocusViewType = .animated
 // Show camera position button
 viewController.cameraViewController.showsCameraButton = true
+// Set the initial camera position
+viewController.cameraViewController.initialCameraPosition = .front // Default is .back
 // Set settings button text
 let title = NSAttributedString(
   string: "Settings",

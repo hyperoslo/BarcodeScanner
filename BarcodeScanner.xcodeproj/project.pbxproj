@@ -8,11 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2DBF9E0E1F169DEF006B5AA8 /* FocusViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBF9E0D1F169DEF006B5AA8 /* FocusViewType.swift */; };
+		CE8C0771252FBBAF007FF4A4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE8C0770252FBBAF007FF4A4 /* Images.xcassets */; };
 		D504555F1FD8714700E46826 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D504555E1FD8714700E46826 /* UIView+Extensions.swift */; };
-		D50BE3E91C9FE7A80000A34C /* flashOff@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D50BE3E51C9FE7A80000A34C /* flashOff@3x.png */; };
-		D50BE3EA1C9FE7A80000A34C /* flashOn@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D50BE3E61C9FE7A80000A34C /* flashOn@3x.png */; };
-		D50BE3EB1C9FE7A80000A34C /* info@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D50BE3E71C9FE7A80000A34C /* info@3x.png */; };
-		D5349DF8201E42D900CD53EA /* cameraRotate@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D5349DF7201E42D900CD53EA /* cameraRotate@3x.png */; };
 		D55281B62016758F00FF3CDD /* HeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55281B52016758F00FF3CDD /* HeaderViewController.swift */; };
 		D55281B8201675D500FF3CDD /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55281B7201675D500FF3CDD /* MessageViewController.swift */; };
 		D55281BA2016770800FF3CDD /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55281B92016770800FF3CDD /* CameraViewController.swift */; };
@@ -28,11 +25,8 @@
 
 /* Begin PBXFileReference section */
 		2DBF9E0D1F169DEF006B5AA8 /* FocusViewType.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = FocusViewType.swift; sourceTree = "<group>"; tabWidth = 2; };
+		CE8C0770252FBBAF007FF4A4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D504555E1FD8714700E46826 /* UIView+Extensions.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; tabWidth = 2; };
-		D50BE3E51C9FE7A80000A34C /* flashOff@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flashOff@3x.png"; sourceTree = "<group>"; };
-		D50BE3E61C9FE7A80000A34C /* flashOn@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flashOn@3x.png"; sourceTree = "<group>"; };
-		D50BE3E71C9FE7A80000A34C /* info@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "info@3x.png"; sourceTree = "<group>"; };
-		D5349DF7201E42D900CD53EA /* cameraRotate@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cameraRotate@3x.png"; sourceTree = "<group>"; };
 		D55281B52016758F00FF3CDD /* HeaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderViewController.swift; sourceTree = "<group>"; };
 		D55281B7201675D500FF3CDD /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		D55281B92016770800FF3CDD /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
@@ -62,10 +56,7 @@
 		D50BE3E31C9FE7A80000A34C /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				D5349DF7201E42D900CD53EA /* cameraRotate@3x.png */,
-				D50BE3E51C9FE7A80000A34C /* flashOff@3x.png */,
-				D50BE3E61C9FE7A80000A34C /* flashOn@3x.png */,
-				D50BE3E71C9FE7A80000A34C /* info@3x.png */,
+				CE8C0770252FBBAF007FF4A4 /* Images.xcassets */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -95,7 +86,6 @@
 		D5B2E8951C3A780C00C0327D = {
 			isa = PBXGroup;
 			children = (
-				D50BE3E31C9FE7A80000A34C /* Images */,
 				D5C629691C3A809D007F7B7C /* Sources */,
 				D5C6295C1C3A800E007F7B7C /* BarcodeScanner */,
 				D5B2E8A01C3A780C00C0327D /* Products */,
@@ -121,6 +111,7 @@
 		D5C629691C3A809D007F7B7C /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				D50BE3E31C9FE7A80000A34C /* Images */,
 				D5CB3785201947D000B9319D /* Helpers */,
 				D5CB37842019477900B9319D /* DataStructures */,
 				D55281BD20167D9F00FF3CDD /* Extensions */,
@@ -218,10 +209,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D50BE3E91C9FE7A80000A34C /* flashOff@3x.png in Resources */,
-				D5349DF8201E42D900CD53EA /* cameraRotate@3x.png in Resources */,
-				D50BE3EB1C9FE7A80000A34C /* info@3x.png in Resources */,
-				D50BE3EA1C9FE7A80000A34C /* flashOn@3x.png in Resources */,
+				CE8C0771252FBBAF007FF4A4 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
