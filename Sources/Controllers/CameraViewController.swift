@@ -2,18 +2,17 @@ import UIKit
 import AVFoundation
 
 /// Delegate to handle camera setup and video capturing.
-protocol CameraViewControllerDelegate: AnyObject {
+@objc protocol CameraViewControllerDelegate: AnyObject {
   func cameraViewControllerDidSetupCaptureSession(_ controller: CameraViewController)
   func cameraViewControllerDidFailToSetupCaptureSession(_ controller: CameraViewController)
   func cameraViewController(_ controller: CameraViewController, didReceiveError error: Error)
   func cameraViewControllerDidTapSettingsButton(_ controller: CameraViewController)
-  func cameraViewController(
-    _ controller: CameraViewController,
-    didOutput metadataObjects: [AVMetadataObject]
+  func cameraViewController(_ controller: CameraViewController, didOutput metadataObjects: [AVMetadataObject]
   )
 }
 
 /// View controller responsible for camera controls and video capturing.
+@objcMembers
 public final class CameraViewController: UIViewController {
   weak var delegate: CameraViewControllerDelegate?
 
@@ -380,7 +379,7 @@ private extension CameraViewController {
     videoPreviewLayer.frame = view.layer.bounds
 
     if let connection = videoPreviewLayer.connection, connection.isVideoOrientationSupported {
-      switch UIApplication.shared.statusBarOrientation {
+      switch UIApplication.interfaceOrientation {
       case .portrait:
         connection.videoOrientation = .portrait
       case .landscapeRight:
@@ -439,4 +438,17 @@ extension CameraViewController: AVCaptureMetadataOutputObjectsDelegate {
                              from connection: AVCaptureConnection) {
     delegate?.cameraViewController(self, didOutput: metadataObjects)
   }
+}
+
+// MARK: - Private
+
+private extension UIApplication {
+
+    static var interfaceOrientation: UIInterfaceOrientation? {
+        if #available(iOS 13.0, *) {
+            return UIApplication.shared.windows.first(where: { $0.isKeyWindow })?.windowScene?.interfaceOrientation
+        } else {
+            return UIApplication.shared.statusBarOrientation
+        }
+    }
 }

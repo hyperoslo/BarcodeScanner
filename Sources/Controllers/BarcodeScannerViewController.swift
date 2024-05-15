@@ -31,6 +31,7 @@ import AVFoundation
  - Unauthorized mode
  - Not found error message
  */
+@objcMembers
 open class BarcodeScannerViewController: UIViewController {
   public static var footerHeight: CGFloat = 75
   @objc public var hideFooterView = false

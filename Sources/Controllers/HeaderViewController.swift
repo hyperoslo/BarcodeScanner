@@ -1,12 +1,13 @@
 import UIKit
 
 /// Delegate to handle touch event of the close button.
-protocol HeaderViewControllerDelegate: AnyObject {
+@objc protocol HeaderViewControllerDelegate: AnyObject {
   func headerViewControllerDidTapCloseButton(_ controller: HeaderViewController)
 }
 
 /// View controller with title label and close button.
 /// It will be added as a child view controller if `BarcodeScannerController` is being presented.
+@objcMembers
 public final class HeaderViewController: UIViewController {
   weak var delegate: HeaderViewControllerDelegate?
 
