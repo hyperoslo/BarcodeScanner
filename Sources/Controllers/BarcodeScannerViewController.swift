@@ -4,7 +4,7 @@ import AVFoundation
 // MARK: - Delegates
 
 /// Delegate to handle the captured code.
-public protocol BarcodeScannerCodeDelegate: class {
+@objc public protocol BarcodeScannerCodeDelegate: AnyObject {
   func scanner(
     _ controller: BarcodeScannerViewController,
     didCaptureCode code: String,
@@ -13,12 +13,12 @@ public protocol BarcodeScannerCodeDelegate: class {
 }
 
 /// Delegate to report errors.
-public protocol BarcodeScannerErrorDelegate: class {
+@objc public protocol BarcodeScannerErrorDelegate: AnyObject {
   func scanner(_ controller: BarcodeScannerViewController, didReceiveError error: Error)
 }
 
 /// Delegate to dismiss barcode scanner when the close button has been pressed.
-public protocol BarcodeScannerDismissalDelegate: class {
+@objc public protocol BarcodeScannerDismissalDelegate: AnyObject {
   func scannerDidDismiss(_ controller: BarcodeScannerViewController)
 }
 
@@ -32,24 +32,28 @@ public protocol BarcodeScannerDismissalDelegate: class {
  - Not found error message
  */
 open class BarcodeScannerViewController: UIViewController {
-  private static let footerHeight: CGFloat = 75
-  public var hideFooterView = false
+  public static var footerHeight: CGFloat = 75
+  @objc public var hideFooterView = false
 
   // MARK: - Public properties
 
   /// Delegate to handle the captured code.
-  public weak var codeDelegate: BarcodeScannerCodeDelegate?
+  @objc public weak var codeDelegate: BarcodeScannerCodeDelegate?
   /// Delegate to report errors.
-  public weak var errorDelegate: BarcodeScannerErrorDelegate?
+  @objc public weak var errorDelegate: BarcodeScannerErrorDelegate?
   /// Delegate to dismiss barcode scanner when the close button has been pressed.
-  public weak var dismissalDelegate: BarcodeScannerDismissalDelegate?
+  @objc public weak var dismissalDelegate: BarcodeScannerDismissalDelegate?
 
   /// When the flag is set to `true` controller returns a captured code
   /// and waits for the next reset action.
-  public var isOneTimeSearch = true
+  @objc public var isOneTimeSearch = true
 
+    /// When the flag is set to `true` the screen is flashed on barcode scan.
+      /// Defaults to true.
+  @objc public var shouldSimulateFlash = true
+    
   /// `AVCaptureMetadataOutput` metadata object types.
-  public var metadata = AVMetadataObject.ObjectType.barcodeScannerMetadata {
+  @objc public var metadata = AVMetadataObject.ObjectType.barcodeScannerMetadata {
     didSet {
       cameraViewController.metadata = metadata
     }
@@ -198,6 +202,13 @@ open class BarcodeScannerViewController: UIViewController {
    - Parameter processing: Flag to set the current state to `.processing`.
    */
   private func animateFlash(whenProcessing: Bool = false) {
+    guard shouldSimulateFlash else {
+        if whenProcessing {
+            self.status = Status(state: .processing)
+        }
+        return
+    }
+
     let flashView = UIView(frame: view.bounds)
     flashView.backgroundColor = UIColor.white
     flashView.alpha = 1
