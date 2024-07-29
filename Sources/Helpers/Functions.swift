@@ -22,7 +22,14 @@ func imageNamed(_ name: String) -> UIImage {
  - Returns: An image.
  */
 func localizedString(_ key: String) -> String {
-    NSLocalizedString(key, bundle: Bundle.module, comment: key)
+  if let bundle = Bundle(identifier: "no.hyper.BarcodeScanner-iOS") {
+    return bundle.localizedString(forKey: key, value: nil, table: "Localizable")
+  }
+  if let path = Bundle(for: BarcodeScannerViewController.self).resourcePath,
+    let resourceBundle = Bundle(path: path + "/Localization.bundle") {
+    return resourceBundle.localizedString(forKey: key, value: nil, table: "Localizable")
+  }
+  return key
 }
 
 /// Checks if the app is running in Simulator.
